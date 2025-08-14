@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,31 +14,31 @@
   <nav class="sidebar">
     <h2>Evans Korir</h2>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" class="tab-link active">About</a></li>
+      <li><a href="#research" class="tab-link">Research</a></li>
+      <li><a href="#publications" class="tab-link">Publications</a></li>
+      <li><a href="#awards" class="tab-link">Awards</a></li>
+      <li><a href="#contact" class="tab-link">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Main content -->
   <main class="content">
 
-    <section id="about">
-  <h1>About</h1>
-  <div class="about-container">
-    <img src="img.png" alt="Evans Korir" class="profile-pic">
-    <p>
-      Ph.D. Researcher in Applied Mathematics at University of Szeged, Hungary. My research focuses on mathematical and computational modeling of infectious diseases, social contact patterns, and actuarial science.
-    </p>
-  </div>
-</section>
+    <!-- About Section -->
+    <section id="about" class="tab-content active">
+      <h1>About</h1>
+      <div class="about-container">
+        <img src="img.png" alt="Evans Korir" class="profile-pic">
+        <p>
+          Ph.D. Researcher in Applied Mathematics at University of Szeged, Hungary. My research focuses on mathematical and computational modeling of infectious diseases, social contact patterns, and actuarial science.
+        </p>
+      </div>
+    </section>
 
     <!-- Research Section -->
-    <section id="research">
+    <section id="research" class="tab-content">
       <h1>Research</h1>
-      <p>I am interested in various topics including:</p>
       <h3>Mathematical Epidemiology</h3>
       <p>Modeling infectious disease dynamics, sensitivity analysis of age-structured contact matrices, and interventions.</p>
       <h3>Actuarial Science & Finance</h3>
@@ -47,7 +48,7 @@
     </section>
 
     <!-- Publications Section -->
-    <section id="publications">
+    <section id="publications" class="tab-content">
       <h1>Publications</h1>
       <ul>
         <li>2025: Age-Structured Social Contact Patterns and Epidemic Risk in Africa (under review)</li>
@@ -58,7 +59,7 @@
     </section>
 
     <!-- Awards Section -->
-    <section id="awards">
+    <section id="awards" class="tab-content">
       <h1>Awards & Recognition</h1>
       <ul>
         <li>SZTE Scholarship for Excellence (Sep 2023 – Aug 2025)</li>
@@ -68,7 +69,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="tab-content">
       <h1>Contact</h1>
       <p>Email: <a href="mailto:evanskorir6@server.math.u-szeged.hu">evanskorir6@server.math.u-szeged.hu</a></p>
       <p>GitHub: <a href="https://github.com/Evanskorir">github.com/Evanskorir</a></p>
@@ -79,16 +80,24 @@
 </div>
 
 <script>
-  // Smooth scrolling
-  const links = document.querySelectorAll('.sidebar a');
-  for (const link of links) {
-    link.addEventListener('click', function(e) {
+  // Tab functionality
+  const tabs = document.querySelectorAll('.tab-link');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function(e) {
       e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+
+      // Remove active class from all tabs and contents
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      // Add active class to clicked tab and corresponding content
+      this.classList.add('active');
+      const target = document.querySelector(this.getAttribute('href'));
+      target.classList.add('active');
     });
-  }
+  });
 </script>
 
 </body>
