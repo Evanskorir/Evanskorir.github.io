@@ -7,7 +7,6 @@ body {
 
 .container {
   display: flex;
-  flex-wrap: wrap;
 }
 
 /* Sidebar navigation */
@@ -38,9 +37,10 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  display: block;
 }
 
-.sidebar ul li a:hover {
+.sidebar ul li a.active {
   text-decoration: underline;
 }
 
@@ -50,6 +50,16 @@ body {
   padding: 2rem;
   max-width: 800px;
   flex: 1;
+}
+
+/* Hide all tab contents by default */
+.tab-content {
+  display: none;
+}
+
+/* Show only active tab */
+.tab-content.active {
+  display: block;
 }
 
 section {
@@ -77,12 +87,11 @@ a:hover {
   text-decoration: underline;
 }
 
-/* About section with profile picture */
+/* About section with profile picture horizontally */
 .about-container {
   display: flex;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .profile-pic {
@@ -90,17 +99,17 @@ a:hover {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #fff; /* white border for contrast */
+  border: 2px solid #fff;
 }
 
-/* Responsive for smaller screens */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
   }
-  
+
   .content {
     margin-left: 0;
   }
