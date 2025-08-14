@@ -7,46 +7,85 @@
 </head>
 <body>
 
-<header>
-  <h1>Evans Kiptoo Korir</h1>
-  <p>Ph.D. Researcher in Applied Mathematics</p>
-  <p>
-    <a href="mailto:evanskorir6@server.math.u-szeged.hu">Email</a> |
-    <a href="https://github.com/Evanskorir">GitHub</a> |
-    <a href="https://www.linkedin.com/in/evans-kiptoo-korir-78995a68/">LinkedIn</a>
-  </p>
-</header>
+<div class="container">
 
-<section id="education">
-  <h2>Education</h2>
-  <ul>
-    <li>Ph.D. Applied Mathematics, University of Szeged (2021–Present)</li>
-    <li>M.Sc. Actuarial Science, University of Kerala (2018–2020)</li>
-    <li>B.Sc. Actuarial Science with IT, Jaramogi Oginga Odinga University (2013–2016)</li>
-  </ul>
-</section>
+  <!-- Sidebar navigation -->
+  <nav class="sidebar">
+    <h2>Evans Korir</h2>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<section id="research-interests">
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Mathematical and computational modeling of infectious diseases</li>
-    <li>Actuarial science and quantitative finance</li>
-    <li>Applied data science and machine learning for complex systems</li>
-  </ul>
-</section>
+  <!-- Main content -->
+  <main class="content">
 
-<section id="publications">
-  <h2>Publications</h2>
-  <ul>
-    <li>2025: Age-Structured Social Contact Patterns and Epidemic Risk in Africa (under review)</li>
-    <li>2025: Modeling the Spatial Spread of COVID-19 in Kenya (under review)</li>
-  </ul>
-</section>
+    <!-- About Section -->
+    <section id="about">
+      <h1>About</h1>
+      <p>Ph.D. Researcher in Applied Mathematics at University of Szeged, Hungary. My research focuses on mathematical and computational modeling of infectious diseases, social contact patterns, and actuarial science.</p>
+    </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:evanskorir6@server.math.u-szeged.hu">evanskorir6@server.math.u-szeged.hu</a></p>
-</section>
+    <!-- Research Section -->
+    <section id="research">
+      <h1>Research</h1>
+      <p>I am interested in various topics including:</p>
+      <h3>Mathematical Epidemiology</h3>
+      <p>Modeling infectious disease dynamics, sensitivity analysis of age-structured contact matrices, and interventions.</p>
+      <h3>Actuarial Science & Finance</h3>
+      <p>Quantitative risk modeling, data-driven cluster analysis, and uncertainty quantification in insurance.</p>
+      <h3>Data Science</h3>
+      <p>Machine learning and applied data analysis for complex systems and decision support.</p>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+      <h1>Publications</h1>
+      <ul>
+        <li>2025: Age-Structured Social Contact Patterns and Epidemic Risk in Africa (under review)</li>
+        <li>2025: Modeling the Spatial Spread of COVID-19 in Kenya (under review)</li>
+        <li>2025: Eigenvector-Based Sensitivity Analysis of Contact Patterns in Epidemic Modeling</li>
+        <li>2024: Comparative clustering and visualization of socioeconomic and health indicators: A case of Kenya</li>
+      </ul>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards">
+      <h1>Awards & Recognition</h1>
+      <ul>
+        <li>SZTE Scholarship for Excellence (Sep 2023 – Aug 2025)</li>
+        <li>Stipendium Hungaricum Scholarship (Sep 2021 – Aug 2025)</li>
+        <li>Dr. R. RamaKumar Memorial Prize (Aug 2020)</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h1>Contact</h1>
+      <p>Email: <a href="mailto:evanskorir6@server.math.u-szeged.hu">evanskorir6@server.math.u-szeged.hu</a></p>
+      <p>GitHub: <a href="https://github.com/Evanskorir">github.com/Evanskorir</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/evans-kiptoo-korir-78995a68/">linkedin.com/in/evans-kiptoo-korir</a></p>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Smooth scrolling
+  const links = document.querySelectorAll('.sidebar a');
+  for (const link of links) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
