@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -305,25 +306,47 @@
 </script>
 
 <style>
-  /* Minimal inline styles to support the new elements if style.css is missing */
-  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin: 0; }
-  .container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
-  .sidebar { background: #0e1b2a; color: #fff; padding: 24px; }
+  /* --- Layout Fix: force horizontal (sidebar + content) on desktop --- */
+  :root { --sidebar-w: 260px; }
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin: 0; color: #0f172a; }
+
+  /* Use FLEX instead of grid to avoid unexpected stacking from external CSS */
+  .container { display: flex; min-height: 100vh; }
+  .sidebar { background: #0e1b2a; color: #fff; padding: 24px; width: var(--sidebar-w); flex: 0 0 var(--sidebar-w); }
   .sidebar h2 { margin-top: 0; font-size: 20px; }
   .sidebar ul { list-style: none; padding: 0; margin: 16px 0 0; }
   .sidebar a { color: #cfe3ff; text-decoration: none; display: block; padding: 8px 0; }
   .sidebar a.active { color: #fff; font-weight: 700; }
-  .content { padding: 32px; }
-  h1 { margin-top: 0; }
-  .about-container { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: start; }
-  .profile-pic { width: 140px; height: 140px; object-fit: cover; border-radius: 8px; border: 1px solid #e5e7eb; }
+
+  .content { flex: 1; padding: 32px; max-width: 1200px; width: 100%; margin: 0 auto; }
+  h1 { margin-top: 0; color: #365e95; }
+
+  /* About */
+  .about-container { display: grid; grid-template-columns: 160px 1fr; gap: 16px; align-items: start; }
+  .profile-pic { width: 160px; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid #e5e7eb; }
   .highlight { background: #f0f7ff; border: 1px solid #cfe3ff; padding: 12px 14px; border-radius: 8px; margin-top: 8px; }
-  .project-card { border: 1px solid #e5e7eb; padding: 16px; border-radius: 10px; margin-bottom: 16px; }
+
+  /* Projects */
+  .project-card { border: 1px solid #e5e7eb; padding: 16px; border-radius: 10px; margin-bottom: 16px; background: #fff; }
   .project-card header { margin-bottom: 8px; }
   .project-card .meta { color: #475569; font-size: 14px; }
-  .grid.two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .grid.two-col { display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 12px; }
+
+  /* Tabs */
   .tab-content { display: none; }
   .tab-content.active { display: block; }
+
+  /* Make sure paragraphs don't collapse into a narrow column */
+  .content p { max-width: 70ch; line-height: 1.6; }
+
+  /* Responsive: stack vertically only on small screens */
+  @media (max-width: 900px) {
+    .container { display: block; }
+    .sidebar { width: 100%; position: sticky; top: 0; z-index: 10; }
+    .about-container { grid-template-columns: 120px 1fr; }
+    .grid.two-col { grid-template-columns: 1fr; }
+  }
 </style>
 
 </body>
