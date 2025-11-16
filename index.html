@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Evans Kiptoo Korir</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 
@@ -16,7 +16,6 @@
     <ul>
       <li><a href="#about" class="tab-link active">About</a></li>
       <li><a href="#research" class="tab-link">Research</a></li>
-      <li><a href="#projects" class="tab-link">Projects</a></li>
       <li><a href="#publications" class="tab-link">Publications</a></li>
       <li><a href="#conferences" class="tab-link">Conferences</a></li>
       <li><a href="#awards" class="tab-link">Awards</a></li>
@@ -33,15 +32,20 @@
       <h1>About</h1>
       <div class="about-container">
         <img src="img.png" alt="Evans Korir" class="profile-pic">
-        <p>
-          Junior Research Fellow in Applied Mathematics at the University of Szeged, Hungary. My research focuses on
-          mathematical and computational modeling of infectious diseases, social contact patterns, and actuarial science.
-        </p>
-        <div class="highlight">
-          <strong>New:</strong> <em>Research Student Fellow</em> (Oct 2025 – Nov 2027) at <strong>Amref International University</strong>,
-          working on the EU‑funded <em>Migration and Displacement Action Plan for Sub‑Saharan Africa (MAPS)</em>.
-          I study migration and forced displacement in Kenya through mixed‑methods fieldwork, survey design, and
-          data analysis in collaboration with local and international supervisors.
+        <div>
+          <p>
+            Junior Research Fellow in Applied Mathematics at the University of Szeged, Hungary. My research focuses on
+            mathematical and computational modeling of infectious diseases, social contact patterns, and actuarial science.
+          </p>
+
+          <!-- NEW: MAPS role (kept minimal to preserve design) -->
+          <p>
+            <strong>Upcoming role:</strong> Research Student Fellow (<em>Oct 2025 – Nov 2027</em>) at
+            <strong>Amref International University</strong> on the EU-funded
+            <em>Migration and Displacement Action Plan for Sub-Saharan Africa (MAPS)</em> project in Kenya —
+            contributing desk research and gap analysis, stakeholder consultations, survey/FGD instrument design,
+            field data collection, and analysis in collaboration with local and international supervisors.
+          </p>
         </div>
       </div>
     </section>
@@ -49,62 +53,25 @@
     <!-- Research Section -->
     <section id="research" class="tab-content">
       <h1>Research</h1>
+
+      <!-- unchanged -->
       <h3>Mathematical Epidemiology</h3>
       <p>Modeling infectious disease dynamics, sensitivity analysis of age-structured contact matrices, and interventions.</p>
+
+      <!-- NEW: concise MAPS subsection (matches existing headings) -->
       <h3>Migration &amp; Displacement (MAPS)</h3>
       <p>
-        Mixed‑methods research on migration and forced displacement in Kenya within the EU‑funded MAPS project:
+        Mixed-methods research within the EU-funded MAPS project at Amref International University:
         desk research and gap analysis, stakeholder consultations, instrument design (surveys, interviews, FGDs),
-        field data collection, and policy‑relevant analysis.
+        field data collection, and policy-relevant analysis focused on migration and forced displacement in Kenya.
       </p>
+
+      <!-- unchanged -->
       <h3>Actuarial Science &amp; Finance</h3>
       <p>Quantitative risk modeling, data-driven cluster analysis, and uncertainty quantification in insurance.</p>
+
       <h3>Data Science</h3>
       <p>Machine learning and applied data analysis for complex systems and decision support.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="tab-content">
-      <h1>Projects</h1>
-
-      <article class="project-card">
-        <header>
-          <h3>MAPS – Migration &amp; Displacement Action Plan (EU‑funded)</h3>
-          <p class="meta">Research Student Fellow, <strong>Amref International University</strong> &middot; <em>Oct 2025 – Nov 2027</em></p>
-        </header>
-        <p>
-          Part of a Sub‑Saharan Africa research consortium coordinated with European partners. I support the Kenya stream,
-          focusing on evidence for policy and practice on migration and forced displacement.
-        </p>
-        <div class="grid two-col">
-          <div>
-            <h4>Focus &amp; Methods</h4>
-            <ul>
-              <li>Desk research &amp; comprehensive gap analysis</li>
-              <li>Stakeholder consultations (govt, CSOs, practitioners)</li>
-              <li>Survey instruments, interview guides, FGD protocols</li>
-              <li>Fieldwork: online &amp; face‑to‑face surveys; qualitative interviews</li>
-              <li>Quantitative &amp; qualitative analysis; dissemination</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Timeline</h4>
-            <ul>
-              <li><strong>Preparatory phase:</strong> Oct 2025 – Feb 2026</li>
-              <li><strong>Research phase:</strong> Mar 2026 – Nov 2027</li>
-            </ul>
-            <h4>Planned Outputs</h4>
-            <ul>
-              <li>Gap analysis &amp; fieldwork reports</li>
-              <li>Survey reports and data documentation</li>
-              <li>At least one peer‑reviewed publication by 2027</li>
-              <li>Conference presentations and policy‑oriented briefs</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <!-- You can add more project cards here in the future -->
     </section>
 
     <!-- Publications Section -->
@@ -304,48 +271,5 @@
   });
 </script>
 
-<style>
-  /* --- Layout Fix v2: prevent sidebar overlapping content --- */
-  :root { --sidebar-w: 260px; }
-  * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin: 0; color: #0f172a; overflow-x: hidden; }
-
-  /* Force a horizontal layout and neutralize any external fixed positioning */
-  .container { display: flex !important; min-height: 100vh; }
-  .sidebar { background: #0e1b2a; color: #fff; padding: 24px; width: var(--sidebar-w) !important; flex: 0 0 var(--sidebar-w) !important; position: relative !important; z-index: 1; }
-  .sidebar h2 { margin-top: 0; font-size: 20px; }
-  .sidebar ul { list-style: none; padding: 0; margin: 16px 0 0; }
-  .sidebar a { color: #cfe3ff; text-decoration: none; display: block; padding: 8px 0; }
-  .sidebar a.active { color: #fff; font-weight: 700; }
-
-  .content { flex: 1 1 auto !important; padding: 32px; max-width: 1200px; width: 100% !important; margin: 0 auto; position: relative; z-index: 0; }
-  h1 { margin-top: 0; color: #365e95; }
-
-  /* About */
-  .about-container { display: grid; grid-template-columns: 160px 1fr; gap: 16px; align-items: start; }
-  .profile-pic { width: 160px; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid #e5e7eb; }
-  .highlight { background: #f0f7ff; border: 1px solid #cfe3ff; padding: 12px 14px; border-radius: 8px; margin-top: 8px; }
-
-  /* Projects */
-  .project-card { border: 1px solid #e5e7eb; padding: 16px; border-radius: 10px; margin-bottom: 16px; background: #fff; }
-  .project-card header { margin-bottom: 8px; }
-  .project-card .meta { color: #475569; font-size: 14px; }
-  .grid.two-col { display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 12px; }
-
-  /* Tabs */
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
-
-  /* Make sure paragraphs don't collapse into a narrow column */
-  .content p { max-width: 70ch; line-height: 1.6; }
-
-  /* Responsive: stack vertically only on small screens */
-  @media (max-width: 900px) {
-    .container { display: block !important; }
-    .sidebar { width: 100% !important; flex: none !important; position: sticky !important; top: 0; z-index: 10; }
-    .content { width: 100% !important; }
-    .about-container { grid-template-columns: 120px 1fr; }
-    .grid.two-col { grid-template-columns: 1fr; }
-  }
-</style>
+</body>
+</html>
